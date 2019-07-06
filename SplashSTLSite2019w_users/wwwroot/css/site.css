@@ -1,0 +1,375 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+.active {
+    background-color: darkblue;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.title {
+    font-family: bold 15px cursive;
+}
+
+.columns {
+    columns: 100px 2;
+    margin: auto;
+    width: 50em;
+    text-align: justify
+}
+
+.blue {
+    color: mediumblue;
+}
+
+.cursive {
+    font-family: cursive;
+}
+
+.darkblue {
+    color: darkblue;
+}
+
+.darkgrey {
+    color: slategray;
+}
+
+.center {
+    text-align: center;
+}
+
+IMG.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    text-align: center;
+    color: darkslategrey;
+    font-family: cursive;
+}
+
+.columns3 {
+    columns: 50px 3;
+    text-align: justify;
+    grid-auto-columns: auto;
+}
+
+.margin5 {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+.margin10 {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.calibra {
+    font-family: Calibri;
+}
+
+p {
+    font-family: Calibri;
+}
+
+body {
+    background-image: -webkit-linear-gradient(to bottom right, darkblue, blue, deepskyblue, aqua, lightcyan, white, tomato, red, red, darkred);
+    background-image: linear-gradient(to bottom right, darkblue, blue, deepskyblue, aqua, lightcyan, white)
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    font-size: medium;
+}
+
+.jiggle {
+    font-size: 75px;
+    font: bold cursive;
+}
+
+    .jiggle span {
+        display: inline-block;
+        animation: float .2s ease-in-out infinite;
+    }
+
+@keyframes float {
+    0%,100% {
+        transform: none;
+    }
+
+    33% {
+        transform: translateY(-1px) rotate(-2deg);
+    }
+
+    66% {
+        transform: translateY(1px) rotate(2deg);
+    }
+}
+
+header:hover span {
+    animation: bounce .6s;
+}
+
+@keyframes bounce {
+    0%,100% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: rotateX(20deg) translateY(2px) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(3deg) scale(1.1);
+    }
+}
+
+span:nth-child(4n) {
+    color: khaki;
+    text-shadow: 1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%);
+}
+
+span:nth-child(4n-1) {
+    color: lightgreen;
+    text-shadow: 1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%);
+}
+
+span:nth-child(4n-2) {
+    color: cornflowerblue;
+    text-shadow: 1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%);
+}
+
+span:nth-child(4n-3) {
+    color: salmon;
+    text-shadow: 1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%);
+}
+
+.jiggle span:nth-child(2) {
+    animation-delay: .05s;
+}
+
+.jiggle span:nth-child(3) {
+    animation-delay: .1s;
+}
+
+.jiggle span:nth-child(4) {
+    animation-delay: .15s;
+}
+
+.jiggle span:nth-child(5) {
+    animation-delay: .2s;
+}
+
+.jiggle span:nth-child(6) {
+    animation-delay: .25s;
+}
+
+.jiggle span:nth-child(7) {
+    animation-delay: .3s;
+}
+
+.jiggle span:nth-child(8) {
+    animation-delay: .35s;
+}
+
+.jiggle span:nth-child(9) {
+    animation-delay: .4s;
+}
+
+.jiggle span:nth-child(10) {
+    animation-delay: .45s;
+}
+
+.jiggle span:nth-child(11) {
+    animation-delay: .5s;
+}
+
+.jiggle span:nth-child(12) {
+    animation-delay: .55s;
+}
+
+.jiggle span:nth-child(13) {
+    animation-delay: .6s;
+}
+
+.jiggle span:nth-child(14) {
+    animation-delay: .65s;
+}
+
+jiggle span:nth-child(15) {
+    animation-delay: .7s;
+}
+
+jiggle span:nth-child(16) {
+    animation-delay: .75s;
+}
+
+jiggle span:nth-child(17) {
+    animation-delay: .8s;
+}
+
+jiggle span:nth-child(18) {
+    animation-delay: .85s;
+}
+
+jiggle span:nth-child(19) {
+    animation-delay: .9s;
+}
+
+jiggle span:nth-child(20) {
+    animation-delay: .95s;
+}
+
+jiggle span:nth-child(21) {
+    animation-delay: .10s;
+}
+
+jiggle span:nth-child(22) {
+    animation-delay: 1.05s;
+}
