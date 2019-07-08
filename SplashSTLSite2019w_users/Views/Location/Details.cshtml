@@ -1,0 +1,58 @@
+﻿@model SplashSTLSite2019w_users.ViewModels.Location.LocationDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<p>
+    <a asp-controller="LocationRating" asp-action="Create" asp-route-locationID="@Model.Id">Rate/Review</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                Ratings
+            </th>
+            <th>
+                Reviews
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => Model.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Description)
+            </td>
+            <td>
+                @foreach (var item in Model.RatingDetailModels)
+                {
+                    @Html.DisplayFor(modelItem => item.Rating)
+                    <span>,            </span>
+                }
+            </td>
+            <td>
+                @foreach (var item in Model.RatingDetailModels)
+                {
+
+                    @Html.DisplayFor(modelItem => item.Review)
+                    <span>,            </span>
+
+                }
+
+            </td>
+            </tr>
+    </tbody>
+</table>

@@ -7,6 +7,10 @@ a.navbar-brand {
     word-break: break-all;
 }
 
+.tan {
+    color:honeydew;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -69,6 +73,7 @@ button.accept-policy {
 html {
     position: relative;
     min-height: 100%;
+
 }
 
 body {
@@ -215,7 +220,7 @@ p {
 }
 
 body {
-    background-image: -webkit-linear-gradient(to bottom right, darkblue, blue, deepskyblue, aqua, lightcyan, white, tomato, red, red, darkred);
+    background-image: -webkit-linear-gradient(to bottom right, darkblue, blue, deepskyblue, aqua, lightcyan, white);
     background-image: linear-gradient(to bottom right, darkblue, blue, deepskyblue, aqua, lightcyan, white)
 }
 

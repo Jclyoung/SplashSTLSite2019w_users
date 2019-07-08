@@ -10,6 +10,9 @@ namespace SplashSTLSite2019w_users.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Location> Locations { get; set; }
+        public DbSet<LocationRating> LocationRatings { get; set; }
+       
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
