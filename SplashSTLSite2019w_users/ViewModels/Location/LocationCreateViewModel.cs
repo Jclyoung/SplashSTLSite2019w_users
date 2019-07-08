@@ -12,12 +12,12 @@ namespace SplashSTLSite2019w_users.ViewModels.Location
     {
         private ApplicationDbContext context;
 
+
         [Required]
         public string Name { get; set; }
-
-        [Required(ErrorMessage = "Description is a required field and must be between 2 and 200 characters.")]
-        [MaxLength(200)]
+        [Required(ErrorMessage = "Description must be between 2 and 200 characters.")]
         [MinLength(2)]
+        [MaxLength(200)]
         public string Description { get; set; }
         public string Address { get; set; }
         [Required]
@@ -27,33 +27,35 @@ namespace SplashSTLSite2019w_users.ViewModels.Location
 
         public LocationCreateViewModel() { }
 
+
         public LocationCreateViewModel(ApplicationDbContext context)
         {
             this.Categories = context.Categories.ToList();
         }
 
 
-        public void CreateLocation(ApplicationDbContext context, LocationCreateViewModel createModel)
+        public void CreateLocation(ApplicationDbContext context, LocationCreateViewModel locationViewModel)
         {
             Models.Location location = new Models.Location();
             {
-                location.Name = createModel.Name;
-                location.Description = createModel.Description;
-                location.Address = createModel.Address;
-                location.Region = createModel.Region;
+                location.Name = locationViewModel.Name;
+                location.Description = locationViewModel.Description;
+                location.Address = locationViewModel.Address;
+                location.Region = locationViewModel.Region;
             }
-
-
-            List<Models.CategoryLocation> categoryLocations = CreateCategoryLocation(location.Id);
-            location.CategoryLocations = categoryLocations;
+           
             context.Locations.Add(location);
+            List<Models.CategoryLocation> categoryLocations = CreateCategoryLocationRelationships(location.Id);
+            location.CategoryLocations = categoryLocations;
             context.SaveChanges();
+
+
+        }
+        
+        private List<Models.CategoryLocation> CreateCategoryLocationRelationships(int locationId)
+        {
+            return CategoryIds.Select(categoryId => new Models.CategoryLocation { LocationId = locationId, CategoryId = categoryId }).ToList();
         }
 
-        private List<CategoryLocation> CreateCategoryLocation(int id)
-        {
-            return CategoryIds.Select(categoryId => new Models.CategoryLocation
-            { LocationId = id, CategoryId = categoryId }).ToList();
-        }
     }
 }

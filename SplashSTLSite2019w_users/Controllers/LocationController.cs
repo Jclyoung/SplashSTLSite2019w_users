@@ -1,7 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SplashSTLSite2019w_users.Data;
+using SplashSTLSite2019w_users.Models;
+using SplashSTLSite2019w_users.ViewModels;
+using SplashSTLSite2019w_users.ViewModels.Category;
 using SplashSTLSite2019w_users.ViewModels.Location;
+using SplashSTLSite2019w_users.ViewModels.LocationRating;
+
 
 namespace SplashSTLSite2019w_users.Controllers
 {
@@ -23,8 +31,8 @@ namespace SplashSTLSite2019w_users.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            LocationCreateViewModel createModel = new LocationCreateViewModel();
-            return View(createModel);
+            LocationCreateViewModel locationViewModel = new LocationCreateViewModel(context);
+            return View(locationViewModel);
         }
         [HttpPost]
         public IActionResult Create(LocationCreateViewModel createModel)

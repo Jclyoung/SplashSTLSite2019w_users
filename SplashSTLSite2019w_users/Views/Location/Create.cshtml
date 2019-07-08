@@ -1,4 +1,4 @@
-﻿@model SplashSTLSite2019w_users.ViewModels.Location.LocationCreateViewModel;
+﻿@model SplashSTLSite2019w_users.ViewModels.Location.LocationCreateViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -39,13 +39,15 @@
                 <span asp-validation-for="Region" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryIds" class="control-label"></label>
+                <label asp-for="CategoryIds" class="control-label"></</label>
                 @foreach (var category in Model.Categories)
                 {
-                    <label>@category.Name</label>
-                    <input type="checkbox" name="CategoryIds" value="@category.Id" />
+                    <label>@category.Name</label>                    
+                        <input type="checkbox" value="@category.Id" name="CategoryIds" />
+                    
                 }
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
