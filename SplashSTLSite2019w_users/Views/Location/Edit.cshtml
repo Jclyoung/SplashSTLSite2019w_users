@@ -38,15 +38,30 @@
                     <option>North County</option>
                     <option>South County</option>
                     <option>West County</option>
-                    <option>Saint Charles</option> 
+                    <option>Saint Charles</option>
                 </select>
                 <span asp-validation-for="Region" class="text-danger"></span>
             </div>
-                <div class="form-group">
-                    <button type="submit" value="Save" class="btn btn-primary">Submit</button>
-                </div>
-</form>
-    </div>
+            <div class="form-group">
+                <label asp-for="CategoryIds" class="control-label"></</label>
+                @foreach (var category in Model.Categories)
+                {
+                    <label>@category.Name</label>
+                    @if (Model.CategoryIds.Contains(category.Id))
+                    {
+                        <input type="checkbox" value="@category.Id" name="CategoryIds" checked />
+                    }
+                    else
+                    {
+                        <input type="checkbox" value="@category.Id" name="CategoryIds" />
+                    }
+                }
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Save" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+</div>
 </div>
 
 <div>

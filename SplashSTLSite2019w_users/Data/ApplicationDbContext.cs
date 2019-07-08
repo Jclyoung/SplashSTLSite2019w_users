@@ -11,7 +11,8 @@ namespace SplashSTLSite2019w_users.Data
     {
         public DbSet<Location> Locations { get; set; }
         public DbSet<LocationRating> LocationRatings { get; set; }
-       
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CategoryLocation> GetCategoryLocations { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

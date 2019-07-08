@@ -1,4 +1,5 @@
-﻿using SplashSTLSite2019w_users.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SplashSTLSite2019w_users.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -20,17 +21,23 @@ namespace SplashSTLSite2019w_users.ViewModels.Location
         public string Address { get; set; }
         [Required]
         public string Region { get; set; }
+        public List<int> CategoryIds { get; set; }
+        public List<Models.Category> Categories { get; set; }
 
 
         public LocationEditViewModel() { }
 
         public LocationEditViewModel(int id, ApplicationDbContext context)
         {
-            Models.Location location = context.Locations.Find(id);
+            Models.Location location = context.Locations
+               .Include(l => l.CategoryLocations)
+               .Single(l => l.Id == id);
             this.Name = location.Name;
             this.Description = location.Description;
             this.Address = location.Address;
             this.Region = location.Region;
+            CategoryIds = location.CategoryLocations.Select(c => c.CategoryId).ToList();
+            Categories = context.Categories.ToList();
         }
         public void Persist(int id, ApplicationDbContext context)
         {
@@ -43,8 +50,16 @@ namespace SplashSTLSite2019w_users.ViewModels.Location
                 Region = this.Region,
 
             };
+            List<Models.CategoryLocation> categoryLocations = CategoryLocationRelationship(location.Id);
+            location.CategoryLocations = categoryLocations;
             context.Update(location);
             context.SaveChanges();
+        }
+        private List<Models.CategoryLocation> CategoryLocationRelationship(int id)
+        {
+            return CategoryIds.Select(c => new Models.CategoryLocation
+            { LocationId = id, CategoryId = c })
+                .ToList();
         }
     }
 }

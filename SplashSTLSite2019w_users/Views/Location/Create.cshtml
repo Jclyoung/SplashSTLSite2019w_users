@@ -39,6 +39,14 @@
                 <span asp-validation-for="Region" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="CategoryIds" class="control-label"></label>
+                @foreach (var category in Model.Categories)
+                {
+                    <label>@category.Name</label>
+                    <input type="checkbox" name="CategoryIds" value="@category.Id" />
+                }
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

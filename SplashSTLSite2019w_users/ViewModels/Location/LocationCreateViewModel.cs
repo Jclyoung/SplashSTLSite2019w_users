@@ -1,4 +1,5 @@
 ﻿using SplashSTLSite2019w_users.Data;
+using SplashSTLSite2019w_users.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,8 +22,15 @@ namespace SplashSTLSite2019w_users.ViewModels.Location
         public string Address { get; set; }
         [Required]
         public string Region { get; set; }
+        public List<int> CategoryIds { get; set; }
+        public List<Models.Category> Categories { get; set; }
 
         public LocationCreateViewModel() { }
+
+        public LocationCreateViewModel(ApplicationDbContext context)
+        {
+            this.Categories = context.Categories.ToList();
+        }
 
 
         public void CreateLocation(ApplicationDbContext context, LocationCreateViewModel createModel)
@@ -34,8 +42,18 @@ namespace SplashSTLSite2019w_users.ViewModels.Location
                 location.Address = createModel.Address;
                 location.Region = createModel.Region;
             }
+
+
+            List<Models.CategoryLocation> categoryLocations = CreateCategoryLocation(location.Id);
+            location.CategoryLocations = categoryLocations;
             context.Locations.Add(location);
             context.SaveChanges();
+        }
+
+        private List<CategoryLocation> CreateCategoryLocation(int id)
+        {
+            return CategoryIds.Select(categoryId => new Models.CategoryLocation
+            { LocationId = id, CategoryId = categoryId }).ToList();
         }
     }
 }

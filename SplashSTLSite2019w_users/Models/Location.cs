@@ -13,6 +13,7 @@ namespace SplashSTLSite2019w_users.Models
         public string Address { get; set; }
         public string Region { get; set; }
         public List<LocationRating> LocationRatings { get; set; }
+        public List<CategoryLocation> CategoryLocations { get; set; }
 
     }
     //  cd .\SplashSTLSite2019w_users

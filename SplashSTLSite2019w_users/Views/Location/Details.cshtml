@@ -17,6 +17,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
+            Category
             <th>
                 Ratings
             </th>
@@ -36,6 +37,10 @@
             <td>
                 @Html.DisplayFor(modelItem => Model.Description)
             </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => Model.CategoryNames)
+            </td>
             <td>
                 @foreach (var item in Model.RatingDetailModels)
                 {
@@ -53,6 +58,6 @@
                 }
 
             </td>
-            </tr>
+        </tr>
     </tbody>
 </table>
